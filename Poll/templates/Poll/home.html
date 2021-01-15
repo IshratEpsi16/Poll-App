@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+        crossorigin="anonymous">
+    </head>
+    <body>
+    <ul class="nav justify-content-center bg-danger ">
+        <li class="nav-item p-2">
+            <h1 class='text-light'>Poll App</h1>
+        </li>
+        
+    </ul>
+    <div class='bg-warning'>
+    <h2 class='text-center text-dark p-1 mb-4'>Welcome to Poll App</h2>
+
+    {%for i in store%}
+    <ul class='bg-dark text-warning p-4'>
+    <li><h5>{{i.poll_que}}</h5></li>
+    <button type="button" class="btn btn-secondary "><a href="{%url 'create'%}" class='text-white' style='text-decoration: none;'>Create</a></button>
+    <button type="button" class="btn btn-secondary"><a href="{%url 'vote' i.id%}" class='text-white' style=' text-decoration: none;'>Vote</a></button>
+    <button type="button" class="btn btn-secondary"><a href="{%url 'results' i.id%}" class='text-white' style='text-decoration: none;'>Results</a></button>
+    </ul>
+    {% endfor %}
+
+
+
+    <div class="text-center"><p class="fs-6">&copy Copyright Poll App | All Rights Reserved</p></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    </body>
+</html>
